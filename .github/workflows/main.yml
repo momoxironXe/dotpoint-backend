@@ -1,0 +1,86 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main # Change this to your main branch name
+      - dev # Change this to your main branch name
+
+jobs:
+  builder_production:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.18.2"
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+          npm run dist
+
+      - name: Upload to S3 and deploy to Elastic Beanstalk
+        run: |
+          aws s3 cp build/dotpoint.zip s3://elasticbeanstalk-ap-southeast-1-747347469568/dotpoint-${GITHUB_RUN_ID}.zip
+          aws elasticbeanstalk create-application-version \
+            --application-name dotpoint \
+            --version-label dotpoint-${GITHUB_RUN_ID} \
+            --source-bundle S3Bucket=elasticbeanstalk-ap-southeast-1-747347469568,S3Key=dotpoint-${GITHUB_RUN_ID}.zip \
+            --region ap-southeast-1
+          aws elasticbeanstalk update-environment \
+            --application-name dotpoint \
+            --environment-name production \
+            --version-label dotpoint-${GITHUB_RUN_ID} \
+            --region ap-southeast-1
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-southeast-1
+
+      - name: Notify status
+        run: echo "Health is Grey, please check the AWS console"
+
+  builder_development:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.18.2"
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+          npm run dist
+
+      - name: Upload to S3 and deploy to Elastic Beanstalk
+        run: |
+          aws s3 cp build/dotpoint.zip s3://elasticbeanstalk-ap-southeast-1-747347469568/dotpoint-${GITHUB_RUN_ID}.zip
+          aws elasticbeanstalk create-application-version \
+            --application-name dotpoint \
+            --version-label dotpoint-${GITHUB_RUN_ID} \
+            --source-bundle S3Bucket=elasticbeanstalk-ap-southeast-1-747347469568,S3Key=dotpoint-${GITHUB_RUN_ID}.zip \
+            --region ap-southeast-1
+          aws elasticbeanstalk update-environment \
+            --application-name dotpoint \
+            --environment-name development \
+            --version-label dotpoint-${GITHUB_RUN_ID} \
+            --region ap-southeast-1
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-southeast-1
+
+      - name: Notify status
+        run: echo "Health is Grey, please check the AWS console"

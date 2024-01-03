@@ -1,0 +1,72 @@
+{
+  "db_url": "mongodb+srv://mukund:5jlh7g1NNFL0g7bU@dotpoint-nodejs.yp5xyre.mongodb.net/dot_point",
+  "redis_url": "redis://nodejs:Liberator123@@redis-17904.c301.ap-south-1-1.ec2.cloud.redislabs.com:17904",
+  "jwt_token_secret": "seCr3t-Properties^&@-enc-kEY",
+  "access_token_duration": 86400000,
+  "refresh_token_duration": 864000000,
+  "body_security": {
+    "key": "MukundKhunt123456789012345678900",
+    "IV": "7777777a72ddc2f1",
+    "encryption": false,
+    "decryption": false
+  },
+  "refresh_jwt_token_secret": "R|-Fre_|-HSP:?-seCr3t-Properties^&@-enc-kEY",
+  "Winston": {
+    "level": "info"
+  },
+  "airwallex": {
+    "client_id": "rjMRpjQsQBe3iX6paiMjrA",
+    "api_key": "5b41bd9b0dfed700d7f0a55abb6bd4adba583863f7970db1e24ec00938859c90e25ab4fb728c486fa882ed4cf8c30426",
+    "url": "https://api-demo.airwallex.com/api/v1"
+  },
+  "prod_airwallex": {
+    "client_id": "AqzeJ3JrStS9Z3O1wnpwKw",
+    "api_key": "5933860626bc251d9414e4b6fc1e58d5bc3e5842647ceb3834f3b634650f56b8222a1522d43d2149831d8ea989a8b6ab",
+    "url": "https://api.airwallex.com/api/v1"
+  },
+  "line": {
+    "client_id": "2000975203",
+    "client_secret": "12094a5dcdb53b512dfd6b2dab369489"
+  },
+  "nodeMail": {
+    "mail": "support@dotpointcapital.com",
+    "password": "wzfvnbrzgimcnhiz",
+    "host": "smtp.gmail.com",
+    "service": "gmail"
+  },
+  "timeZone": "Asia/Calcutta",
+  "twilio": {
+    "ACCOUNT_SID": "xxxxxxxxxxxxxxxxxx",
+    "AUTH_TOKEN": "xxxxxxxxxxxxxxxxxx9"
+  },
+  "aws": {
+    "accessKeyId": "AKIA24ALBMUAPHLU4M2G",
+    "secretAccessKey": "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",
+    "region": "ap-southeast-1",
+    "bucket_name": "dotpoint-storage",
+    "bucketURL": "https://dotpoint-storage.s3.ap-southeast-1.amazonaws.com"
+  },
+  "fcmKey": "",
+  "firebase": {
+    "dynamicURL": "https://firebasedynamiclinks.googleapis.com",
+    "apiKey": "AIzaSyDpYBr-1aXTLzak1PL5G0-I2X8zvOgLdT0"
+  },
+  "meta_trader": {
+    "access_token": "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIyZTg1NWRmNmViMmE4ZDhjNjQwYmRjZjUyYzAyZTIzMSIsInBlcm1pc3Npb25zIjpbXSwiYWNjZXNzUnVsZXMiOlt7ImlkIjoidHJhZGluZy1hY2NvdW50LW1hbmFnZW1lbnQtYXBpIiwibWV0aG9kcyI6WyJ0cmFkaW5nLWFjY291bnQtbWFuYWdlbWVudC1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciIsIndyaXRlciJdLCJyZXNvdXJjZXMiOlsiKjokVVNFUl9JRCQ6KiJdfSx7ImlkIjoibWV0YWFwaS1yZXN0LWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciIsIndyaXRlciJdLCJyZXNvdXJjZXMiOlsiKjokVVNFUl9JRCQ6KiJdfSx7ImlkIjoibWV0YWFwaS1ycGMtYXBpIiwibWV0aG9kcyI6WyJtZXRhYXBpLWFwaTp3czpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciIsIndyaXRlciJdLCJyZXNvdXJjZXMiOlsiKjokVVNFUl9JRCQ6KiJdfSx7ImlkIjoibWV0YWFwaS1yZWFsLXRpbWUtc3RyZWFtaW5nLWFwaSIsIm1ldGhvZHMiOlsibWV0YWFwaS1hcGk6d3M6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbIio6JFVTRVJfSUQkOioiXX0seyJpZCI6Im1ldGFzdGF0cy1hcGkiLCJtZXRob2RzIjpbIm1ldGFzdGF0cy1hcGk6cmVzdDpwdWJsaWM6KjoqIl0sInJvbGVzIjpbInJlYWRlciJdLCJyZXNvdXJjZXMiOlsiKjokVVNFUl9JRCQ6KiJdfSx7ImlkIjoicmlzay1tYW5hZ2VtZW50LWFwaSIsIm1ldGhvZHMiOlsicmlzay1tYW5hZ2VtZW50LWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyIqOiRVU0VSX0lEJDoqIl19LHsiaWQiOiJjb3B5ZmFjdG9yeS1hcGkiLCJtZXRob2RzIjpbImNvcHlmYWN0b3J5LWFwaTpyZXN0OnB1YmxpYzoqOioiXSwicm9sZXMiOlsicmVhZGVyIiwid3JpdGVyIl0sInJlc291cmNlcyI6WyIqOiRVU0VSX0lEJDoqIl19LHsiaWQiOiJtdC1tYW5hZ2VyLWFwaSIsIm1ldGhvZHMiOlsibXQtbWFuYWdlci1hcGk6cmVzdDpkZWFsaW5nOio6KiIsIm10LW1hbmFnZXItYXBpOnJlc3Q6cHVibGljOio6KiJdLCJyb2xlcyI6WyJyZWFkZXIiLCJ3cml0ZXIiXSwicmVzb3VyY2VzIjpbIio6JFVTRVJfSUQkOioiXX1dLCJ0b2tlbklkIjoiMjAyMTAyMTMiLCJpbXBlcnNvbmF0ZWQiOmZhbHNlLCJyZWFsVXNlcklkIjoiMmU4NTVkZjZlYjJhOGQ4YzY0MGJkY2Y1MmMwMmUyMzEiLCJpYXQiOjE2OTg0MDA5OTJ9.AV5V2sjcBuVgnhvW52fc6Rvjk6Sg0XfvzzK8uhd5QW2hiZNB4S2_jiGpY0vTiXjGlIhc1MxML_q_6Nr0DlcdRtX0epgnKrWu6mPcH2iXyF8ubdxndti9JYh_BOOtWeLSyyvBBcRWqxq_SNPP8I_TahVofufRc6XLzLehLHRryE3l5mMr8Es9m-CPHsLhSsS4AQoT2M9CQK3isBZxabWUcJS-_NFv2OGYTYSIIX0bDnkQJTwFidRpKpdkcEc7N_094l3_BLnZeYFcSDbKPK4-zmHCyiJlWyCMlYUAZE_Tlic7-CTxQFPXVPH_wtw_H08h5jb8hG60swp1z8oLRNNhhTxzhMxlNkaS0LhyrVtJfKJjOjPc40vpKSn_Kw39oeq8L-56M7u0enBNBcOWXCMfI5NZbQoRHS_sv3j1VouNq6TQu_IJgkUT7j4o0ciezetpu1ToxQ4sL4Rw_u-qBmbFjbBcPNMtsmL5sfADptbyVTziQTwcjHYCtlzeUvJPE1uvn-3SKlcS7cWz8iUqhx8uRr8YwNdDGrVKERNTSDb1yvCe2n2GgtWyDzoFRfTCBk6A4hNY5LXB6nexEBa3-mDkI0oUdvd7hF8s8LhC_-8CVNUqPWTvoBhKK2IP7oj-XSwKHHSvRbC7U3TDHBCVfMF3-zzWd_MmCbtkYPsF7wT_Rlo"
+  },
+  "coinbase": {
+    "api_key": "a989de94-3d0f-4c75-9e7a-760ae0f0a5b8",
+    "success_url": "https://main.d3ijzon4ntrxm0.amplifyapp.com/client-area",
+    "cancel_url": "https://main.d3ijzon4ntrxm0.amplifyapp.com/new-challenge?step=3",
+    "url": "https://api.commerce.coinbase.com"
+  },
+  "frontend": {
+    "email_verification": "https://main.d3ijzon4ntrxm0.amplifyapp.com/verification?token=",
+    "reset_password": "https://main.d3ijzon4ntrxm0.amplifyapp.com/reset-password?token=",
+    "change_email": "https://main.d3ijzon4ntrxm0.amplifyapp.com/email-change-verification?token=",
+    "credential": "https://main.d3ijzon4ntrxm0.amplifyapp.com/client-area",
+    "update_email": "https://main.d3ijzon4ntrxm0.amplifyapp.com/update-email?token="
+  },
+  "backend_url": "https://dotpoint.api.nodejsapi.tk",
+  "logo": "XXXX"
+}
